@@ -1,8 +1,8 @@
 const axios = require('axios');
 const crypto = require('crypto');
 
-const fetchResource = (resource, userID, clientID) => {
-  const url = `https://api.soundcloud.com/users/${userID}/${resource}?client_id=${clientID}`;
+const fetchUserResource = (resource, userID, clientID) => {
+  const url = `https://api.soundcloud.com/users/${userID}${resource}?client_id=${clientID}`;
   return axios.get(url);
 }
 
@@ -17,15 +17,13 @@ function processDatum(datum) {
   const id = `${type}-${datum.id}`;
   const contentDigest = createHash(datum);
 
-  const children = (datum.kind === 'playlist')
-                   ? datum.tracks.map(t => processDatum(t))
-                   : [];
-
   return {
     ...datum,
+    id,
+    originalID: `${datum.id}`,
     parent: '__SOURCE__',
-    children,
-    internal: { id, type, contentDigest }
+    children: [],
+    internal: { type, contentDigest }
   };
 }
 
@@ -33,12 +31,15 @@ exports.sourceNodes = async ({ boundActionCreators }, { userID, clientID }) => {
   const { createNode } = boundActionCreators;
 
   try {
-    const userInfo = await fetchResource('users', userID, clientID);
-    const playlists = await fetchResource('playlists', userID, clientID);
-    const tracks = await fetchResource('tracks', userID, clientID);
+    // Fetch data
+    const userInfo = await fetchUserResource('', userID, clientID);
+    const playlists = await fetchUserResource('/playlists', userID, clientID);
+    const tracks = await fetchUserResource('/tracks', userID, clientID);
 
     // Process data into nodes.
-    data.forEach(datum => createNode(processDatum(datum)));
+    processDatum(userInfo.data);
+    playlists.data.forEach(datum => createNode(processDatum(datum)));
+    tracks.data.forEach(datum => createNode(processDatum(datum)));
 
     // We're done, return.
     return;
