@@ -37,7 +37,7 @@ exports.sourceNodes = async ({ boundActionCreators }, { userID, clientID }) => {
     const tracks = await fetchUserResource('/tracks', userID, clientID);
 
     // Process data into nodes.
-    processDatum(userInfo.data);
+    createNode(processDatum(userInfo.data));
     playlists.data.forEach(datum => createNode(processDatum(datum)));
     tracks.data.forEach(datum => createNode(processDatum(datum)));
 
