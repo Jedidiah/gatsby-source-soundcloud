@@ -1,12 +1,11 @@
 {
   "name": "gatsby-source-soundcloud",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Gatsby source to fetch data from the SoundCloud API",
   "main": "index.js",
   "repository": "https://github.com/jedidiah/gatsby-source-soundcloud",
   "author": "Jedidiah Broadbent <hello@jedidiah.eu>",
   "license": "MIT",
-  "private": true,
   "keywords": [
     "gatsby",
     "gatsbyjs",
