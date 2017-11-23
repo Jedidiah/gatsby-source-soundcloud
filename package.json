@@ -1,0 +1,29 @@
+{
+  "name": "gatsby-source-soundcloud",
+  "version": "0.0.0",
+  "description": "Fetch data from the SoundCloud API",
+  "main": "index.js",
+  "repository": "https://github.com/jedidiah/gatsby-source-soundcloud",
+  "author": "Jedidiah Broadbent <hello@jedidiah.eu>",
+  "license": "MIT",
+  "private": true,
+  "keywords": [
+    "gatsby",
+    "gatsbyjs",
+    "soundcloud"
+  ],
+  "dependencies": {
+    "axios": "^0.17.1"
+  },
+  "scripts": {
+    "build": "babel src --out-dir . --ignore __tests__",
+    "prepublish": "cross-env NODE_ENV=production npm run build"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-es2015-destructuring": "^6.23.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "cross-env": "^5.1.1"
+  }
+}
