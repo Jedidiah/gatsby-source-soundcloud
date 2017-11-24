@@ -66,7 +66,7 @@ function linkNodes(users, playlists, tracks) {
 
     playlist.tracks___NODE = playlist.tracks.map((playlistTrack) => {
       const id = internalId(playlistTrack.id, playlistTrack.kind);
-      const track = updatedTracks.find(t => t.d === id);
+      const track = updatedTracks.find(t => t.id === id);
       if (track) {
         if (track.playlists___NODE === undefined) {
           track.playlists___NODE = [];
