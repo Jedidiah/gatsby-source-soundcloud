@@ -71,7 +71,7 @@ function linkNodes(users, playlists, tracks) {
         if (track.playlists___NODE === undefined) {
           track.playlists___NODE = [];
         }
-        track.playlists___NODE.push(id);
+        track.playlists___NODE.push(playlist.id);
       }
       return id;
     });
