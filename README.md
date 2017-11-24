@@ -1,6 +1,8 @@
 # gatsby-source-soundcloud
 
-A gatsby source plugin for fetching all the tracks and playlists (sets) for a SoundCloud user.
+A [gatsby](https://www.gatsbyjs.org/) source plugin for fetching all the tracks and playlists (sets) for a SoundCloud user.
+
+Learn more about Gatsby plugins and how to use them here: https://www.gatsbyjs.org/docs/plugins/
 
 ## Install
 
