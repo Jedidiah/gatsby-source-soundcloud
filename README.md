@@ -28,7 +28,7 @@ Get all the playlists:
 
 ```graphql
 {
-  allSCplaylist {
+  allSoundcloudplaylist {
     edges {
       node {
         title
@@ -44,7 +44,7 @@ Get the title and description of all tracks:
 
 ```graphql
 {
-  allSCtrack {
+  allSoundcloudtrack {
     edges {
       node {
         title
