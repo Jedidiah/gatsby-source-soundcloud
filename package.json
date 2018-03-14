@@ -8,6 +8,7 @@
   "license": "MIT",
   "keywords": [
     "gatsby",
+    "gatsby-plugin",
     "gatsbyjs",
     "soundcloud"
   ],
