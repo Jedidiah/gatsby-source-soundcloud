@@ -1,7 +1,8 @@
 {
-  "presets": ["env"],
+  "presets": ["@babel/env"],
   "plugins": [
-    "transform-es2015-destructuring",
-    "transform-object-rest-spread"
+    "@babel/plugin-transform-runtime",
+    "@babel/plugin-proposal-object-rest-spread",
+    "@babel/plugin-transform-destructuring"
   ]
 }
