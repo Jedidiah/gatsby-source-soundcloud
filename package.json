@@ -28,6 +28,20 @@
     "@babel/plugin-transform-destructuring": "^7.5.0",
     "@babel/plugin-transform-runtime": "^7.5.0",
     "@babel/preset-env": "^7.5.4",
-    "cross-env": "^5.2.0"
+    "cross-env": "^5.2.0",
+    "husky": ">=1",
+    "lint-staged": ">=8",
+    "prettier": "1.18.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,css,json,md}": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }
