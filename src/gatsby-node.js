@@ -88,8 +88,8 @@ function linkNodes(nodes) {
     });
 }
 
-exports.sourceNodes = async ({ boundActionCreators }, { userID, clientID }) => {
-  const { createNode } = boundActionCreators;
+exports.sourceNodes = async ({ actions }, { userID, clientID }) => {
+  const { createNode } = actions;
 
   try {
     // Fetch data
